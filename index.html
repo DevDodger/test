@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Anti Smoking Campaign</title>
+  </head>
+  <body>
+
+    <!--- Navbar --->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Anti Smoking Campaign</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+          <span class="navbar-text"></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-content">
+
+        <div class="featured-articles">
+
+            <div class="article-container">
+                <img src="images/article1.jpg" alt="article1">
+                <span class="article-description">DICKS</span>
+            </div>
+
+        </div>
+    </div>
+    
+    <style>
+        body {
+            background-color: #121212;
+        }
+
+        .main-content {
+            background-color: #121212;
+            padding: 20px;
+        }
+
+        .featured-articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .article-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            background-color: #121212;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #000000;
+        }
+
+        .article-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-container span {
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-color: #121212;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+    </style>
+
+    <script>
+        const articles = {
+            "articles": [
+                {
+                    "title": "DICKS",
+                    "description": "DICKS",
+                    "image": "images/article1.jpg"
+                }
+            ]
+        }
+
+        const featuredArticles = document.querySelector(".featured-articles");
+
+        articles.articles.forEach(article => {
+            const articleContainer = document.createElement("div");
+            articleContainer.classList.add("article-container");
+
+            const articleImage = document.createElement("img");
+            articleImage.src = article.image;
+
+            const articleDescription = document.createElement("span");
+            articleDescription.innerText = article.description;
+
+            articleContainer.appendChild(articleImage);
+            articleContainer.appendChild(articleDescription);
+
+            featuredArticles.appendChild(articleContainer);
+        });
+    </script>
+
+    <script type="module" src="/js/modules/api.js"></script>
+    <script src="/js/frameworks/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/frameworks/popper.min.js"></script>
+    <script src="/js/frameworks/bootstrap.bundle.min.js"></script>
+    <script src="/js/home/siteInfo.js"></script>
+    <script src="/js/home/home.js"></script>
+    <link rel="stylesheet" href="/css/hide.css">
+  </body>
+</html>
